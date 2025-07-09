@@ -1,0 +1,35 @@
+# yaml写法
+# 第一层，顶格写，[前面无空格]key:
+# 每两层之间差一个缩进
+# 值：key:[空格]值
+server:
+  port: 8888
+  servlet:
+    context-path: /ssm
+
+my:
+  data:
+    name: witch
+    account:
+      username: koko
+      password: 88888888
+
+
+# 多环境profile配置切换
+# 步骤
+# 1. 定义分配置。分配置命名格式：application-[激活的文件名].yaml
+# 2. 在主配置中激活分配置
+spring:
+  profiles:
+    active: dev, test, produce #多个分配置之间逗号隔开
+  # 3. 细节：如果分配置与主配置有冲突的属性值，以激活的分配置为准。分配置优先！
+  jdbc:
+    dataSource:
+      password: 123456
+
+
+
+
+
+
+

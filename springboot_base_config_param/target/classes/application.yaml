@@ -1,0 +1,32 @@
+# yaml写法
+# 第一层，顶格写，[前面无空格]key:
+# 每两层之间差一个缩进
+# 值：key:[空格]值
+server:
+  port: 8888
+  servlet:
+    context-path: /ssm
+
+my:
+  data:
+    name: witch
+    account:
+      username: koko
+      password: 88888888
+
+
+# 主配置激活分配置
+spring:
+  profiles:
+    active: dev, test, produce #激活分配置dev
+  # 如果主配置与分配置有冲突的属性值，以激活的分配置为准
+  jdbc:
+    dataSource:
+      password: 123456
+
+
+
+
+
+
+

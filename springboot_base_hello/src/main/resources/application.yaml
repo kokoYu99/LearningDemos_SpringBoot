@@ -1,0 +1,7 @@
+# 设置端口号
+server:
+  port: 1450
+
+spring:
+  gson:
+    date-format: "yy-MM-dd-HH-mm"

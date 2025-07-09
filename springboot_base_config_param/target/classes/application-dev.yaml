@@ -1,0 +1,8 @@
+# 分配置文件名：application-xx.yaml
+spring:
+  jdbc:
+    dataSource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///dev
+      username: root
+      password: root
