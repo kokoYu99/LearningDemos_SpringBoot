@@ -1,0 +1,39 @@
+实现步骤:
+ 1. maven-> boot工程
+ 2. 导入场景启动器 (spring-boot-starter-web)
+ 3. 创建Controller实现接口 [json处理能力]
+
+web场景启动器对应的配置:
+  port:
+  根路径:
+  server:
+    port: 8888
+    servlet:
+      context-path: /
+
+静态资源问题:
+   ssm -> mvc:default-servlet-handler (二秘书)
+   外部访问的时候不需要写static文件夹名
+   spring:
+     web:
+       resources:
+         static-locations: classpath:/webapp/
+   springboot -> 约定俗称 -> 约定大于配置 -> "classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"
+
+
+拦截器配置:
+   ssm -> 定义一个拦截器的实现类 -> xml -> <mvc:interceptors 标签
+   boot -> 定义一个拦截器的实现类 -> 定义一个标准的配置类 -> 配置类中声明拦截器即可
+   1. 定义拦截器
+   2. 定义一个springmvc配置类 [提供了各个方向的配置方法] public class SpringMVCConfiguration  implements WebMvcConfigurer
+   3. 重写添加拦截器的方法,完成添加即可
+       @Autowired
+       private MyInterceptor myInterceptor;
+
+       @Override
+       public void addInterceptors(InterceptorRegistry registry) {
+             //拦截器 加入到 registry 参数中!
+             registry.addInterceptor(myInterceptor).addPathPatterns("/**","/user/**")
+                     .excludePathPatterns("/user/aaa")
+                     .order(10);
+       }
