@@ -1,0 +1,4 @@
+com\koko\config\MyBatisProperties.class
+com\koko\Main.class
+com\koko\config\MyBatisAutoConfiguration.class
+com\koko\factory\SqlSessionFactoryBean.class
