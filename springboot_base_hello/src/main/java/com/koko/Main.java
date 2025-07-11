@@ -1,9 +1,9 @@
 package com.koko;
 
+import com.koko.factory.SqlSessionFactoryBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Arrays;
 
@@ -17,6 +17,13 @@ public class Main {
 
         //1.创建IoC容器; 2.启动tomcat
         ApplicationContext applicationContext = SpringApplication.run(Main.class, args);
+
+        /*===============================*/
+        //修改properties，查看SqlSessionFactory组件的info是否改变
+        SqlSessionFactoryBean sqlSessionFactoryBean = applicationContext.getBean(SqlSessionFactoryBean.class);
+        String info = sqlSessionFactoryBean.getInfo();
+        System.out.println(info);
+        /*===============================*/
 
         //默认加载的组件数量
         System.out.println("applicationContext.getBeanDefinitionCount() = " + applicationContext.getBeanDefinitionCount());

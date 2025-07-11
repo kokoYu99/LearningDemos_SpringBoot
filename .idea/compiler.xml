@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot_base_hello" />
         <module name="springboot_base_config_param" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="proj_SpringBoot" target="17" />
       <module name="springboot_base_helloworld" target="17" />
+      <module name="springboot_high_mybatis_starter" target="17" />
+      <module name="springboot_high_springmvc" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -21,6 +22,8 @@
       <module name="springboot_base_config_param" options="-parameters" />
       <module name="springboot_base_hello" options="-parameters" />
       <module name="springboot_base_helloworld" options="-parameters" />
+      <module name="springboot_high_mybatis_starter" options="-parameters" />
+      <module name="springboot_high_springmvc" options="-parameters" />
     </option>
   </component>
 </project>

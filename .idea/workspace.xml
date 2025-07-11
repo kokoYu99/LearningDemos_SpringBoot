@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5be78d47-0247-469f-94a0-b6349ef8d5ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5be78d47-0247-469f-94a0-b6349ef8d5ce" name="Changes" comment="0711-1119">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/AAA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/BBB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/Config02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/MyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/MyImports.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/springboot_base_hello/src/test/java/ImportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_base_hello/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/Config01.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/java/com/koko/config/Config01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot_base_hello/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_base_hello/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/target/classes/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springboot_base_hello/target/classes/com/koko/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/target/classes/com/koko/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot_base_hello/target/classes/com/koko/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot_base_hello/target/classes/com/koko/controller/HelloController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +52,10 @@
     </option>
   </component>
   <component name="ProjectId" id="2zaq7NNDtqnP59iYICAZwhVgOZE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
@@ -58,20 +71,48 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/JAVA_codes/proj_SpringBoot/springboot_base_config_param/src/main/resources",
+    "last_opened_file_path": "D:/JAVA_codes/proj_SpringBoot/springboot_high_springmvc",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.36091954",
-    "settings.editor.selected.configurable": "spring.boot"
+    "settings.editor.selected.configurable": "spring.boot",
+    "spring.configuration.checksum": "e8db56837be9e55ccdcd70408efeab2e"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA_codes\springboot_high_mybatis_starter\src\main\resources\META-INF\spring" />
       <recent name="D:\JAVA_codes\proj_SpringBoot\springboot_base_config_param\src\main\resources" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="ImportTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_base_hello" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ImportTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImportTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot_base_hello" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ImportTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="springboot_base_helloworld" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.koko.Main" />
@@ -114,6 +155,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="JUnit.ImportTest.test" />
+        <item itemvalue="JUnit.ImportTest" />
         <item itemvalue="Spring Boot.Main (2)" />
         <item itemvalue="Spring Boot.Main (1)" />
       </list>
@@ -127,8 +170,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751979365579</updated>
-      <workItem from="1751979366984" duration="24632000" />
+      <workItem from="1751979366984" duration="25312000" />
+      <workItem from="1752204445264" duration="2818000" />
+      <workItem from="1752207298856" duration="9681000" />
     </task>
+    <task id="LOCAL-00001" summary="0711-1119">
+      <created>1752203959733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752203959733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +197,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0711-1119" />
+    <option name="LAST_COMMIT_MESSAGE" value="0711-1119" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

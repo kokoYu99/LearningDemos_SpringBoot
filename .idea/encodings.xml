@@ -3,7 +3,11 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/springboot_base_config_param/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_base_config_param/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_base_hello/springboot_high_springmvc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot_base_hello/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot_base_hello/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../springboot_high_mybatis_starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../springboot_high_mybatis_starter/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

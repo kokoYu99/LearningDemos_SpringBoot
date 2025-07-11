@@ -4,10 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Config01 {
+public class Config02 {
     @Bean
-    public AAA aaa(){
-        return new AAA();
+    public BBB bbb(){
+        return new BBB();
     }
-    
 }

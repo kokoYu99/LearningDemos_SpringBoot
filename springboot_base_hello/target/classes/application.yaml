@@ -5,3 +5,8 @@ server:
 spring:
   gson:
     date-format: "yy-MM-dd-HH-mm"
+
+mybatis:
+  user:
+    username: ROOOOOOOOOOOOOOOOOOOOOOT
+    password: 123456
