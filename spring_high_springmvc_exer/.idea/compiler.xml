@@ -7,17 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot_high_springmvc" />
         <module name="spring_high_springmvc_exer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="spring_high_springmvc_exer" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="springboot_high_springmvc" options="-parameters" />
+      <module name="spring_high_springmvc_exer" options="-parameters" />
     </option>
   </component>
 </project>
