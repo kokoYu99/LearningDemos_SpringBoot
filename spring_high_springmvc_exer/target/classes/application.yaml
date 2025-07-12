@@ -1,0 +1,9 @@
+server:
+  port: 8888 #端口号
+  servlet:
+    context-path: / #项目根路径(上下文路径)
+
+spring:
+  web:
+    resources:
+      static-locations: classpath:/static/ #静态资源的存放路径
