@@ -1,0 +1,8 @@
+spring:
+  application:
+  name: springboot_high_mybatis
+
+server:
+  port: 8888
+  servlet:
+    context-path: /
