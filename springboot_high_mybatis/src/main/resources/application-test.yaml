@@ -1,0 +1,23 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+# MyBatis的配置：
+spring:
+  #(必需)数据库连接信息
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis-example
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+
+#(可选)指定mapperXML位置、resultType别名、驼峰映射、自动映射resultMap、日志实现
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.koko.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
