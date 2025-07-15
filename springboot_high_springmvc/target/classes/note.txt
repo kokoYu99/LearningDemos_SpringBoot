@@ -18,7 +18,12 @@ web场景启动器对应的配置:
      web:
        resources:
          static-locations: classpath:/webapp/
-   springboot -> 约定俗称 -> 约定大于配置 -> "classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/"
+   springboot -> 约定俗成 -> 约定大于配置 ->
+       默认静态资源路径：
+       "classpath:/META-INF/resources/",
+       "classpath:/resources/",
+       "classpath:/static/", (推荐)
+       "classpath:/public/"
 
 
 拦截器配置:

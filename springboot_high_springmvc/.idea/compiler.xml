@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot_high_springmvc" />
         <module name="spring_high_springmvc_exer" />
+        <module name="springboot_high_mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot_high_mybatis" options="-parameters" />
       <module name="springboot_high_springmvc" options="-parameters" />
     </option>
   </component>
