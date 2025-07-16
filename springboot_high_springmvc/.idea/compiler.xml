@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot_high_springmvc" />
         <module name="spring_high_springmvc_exer" />
+        <module name="proj_blog_backend" />
         <module name="springboot_high_mybatis" />
+        <module name="springboot_high_springmvc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

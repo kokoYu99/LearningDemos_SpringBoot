@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koko.mapper.ArticleMapper">
+    <sql id="select">
+        SELECT * FROM article
+    </sql>
+
+    <select id="queryByPage" resultType="article">
+        SELECT * FROM article
+    </select>
+
+
+    <!--    List<Article> queryList(Integer cId);-->
+    <select id="queryList" resultType="article">
+        <include refid="select"/>
+        <where>
+            <if test=" cId!=null and cId!='' ">
+                cid=#{cId}
+            </if>
+        </where>
+    </select>
+
+    <!--    Article queryDetails(Integer id);-->
+    <select id="queryDetails" resultType="article">
+        <include refid="select"/>
+        WHERE id=#{id}
+    </select>
+
+    <!--    int insert(Article article);-->
+    <insert id="insert">
+        INSERT INTO article (title, content, cid, uid, create_time, update_time) VALUES (#{title}, #{content}, #{cId},
+        #{uId}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!--    int update(Article article);-->
+    <update id="update">
+        UPDATE article
+        <set>
+            title=#{title},
+            content=#{content},
+            create_time=#{createTime},
+            update_time=#{updateTime},
+            <if test="cId!=null and cId!=''">
+                cid=#{cId}
+            </if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <!--    int delete(Integer id);-->
+    <delete id="delete">
+        DELETE FROM article WHERE id=#{id}
+    </delete>
+
+
+</mapper>
