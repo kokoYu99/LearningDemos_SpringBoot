@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //描述Controller类
-@Tag(name = "文章接口api")
+@Tag(name="ArticleController", description = "文章接口api")
 @RestController
 @RequestMapping("article")
 public class ArticleController {

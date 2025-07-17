@@ -1,5 +1,6 @@
 package com.koko.pojo;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.util.Date;
@@ -8,8 +9,12 @@ import java.util.Date;
 public class Category {
 
     private Long cId;
+
+    @NotBlank
     private String cName; //分类名称
+
     private Date createTime;
+
     private Date updateTime;
 
 }

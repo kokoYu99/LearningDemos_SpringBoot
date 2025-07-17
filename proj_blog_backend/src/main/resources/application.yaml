@@ -1,6 +1,6 @@
 # spring配置：
 # 必写：dataSource
-# 可选：json时间日期格式
+# 可选：json时间日期格式 （如需传递日期时间数据）
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/blog
