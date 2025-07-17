@@ -106,7 +106,7 @@ public class CategoryServiceImpl implements CategoryService {
         int rows = mapper.delete(id);
 
         if (rows == 0) {
-            throw new BusinessException(500, "删除失败，请稍后再试");
+            throw new BusinessException("删除失败，请稍后再试");
         }
     }
 }
