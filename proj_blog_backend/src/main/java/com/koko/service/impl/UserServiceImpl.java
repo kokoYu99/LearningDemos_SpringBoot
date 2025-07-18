@@ -27,11 +27,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public User queryDetails(Long id) {
         User user = mapper.queryDetails(id);
-        user.setPassword("null");
+        //将密码置空，再返回json
+        //在user实体类中添加注解 @JsonInclude(JsonInclude.Include.NON_NULL)，如果密码的值为空，json中就不包含密码属性
+        user.setPassword(null);
         return user;
     }
 
-    /* 修改用户详情 */
+    /* 修改用户详情(手机号、简介) */
     @Override
     public void update(User user) {
         user.setUpdateTime(new Date());

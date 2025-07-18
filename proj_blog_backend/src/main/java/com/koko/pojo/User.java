@@ -1,5 +1,6 @@
 package com.koko.pojo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -15,6 +16,7 @@ public class User {
     @Size(min = 2, max = 10, message = "用户名必须2-10位")
     private String username;//用户名称
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)//如果此属性的值为空，json中就不包含此属性
     @NotBlank(message = "密码不能为空")
     @Size(min = 6, max = 16, message = "用户名必须6-16位")
     private String password;//密码

@@ -25,7 +25,7 @@ public class UserController {
         return Result.ok(user);
     }
 
-    @PostMapping
+    @PutMapping
     public Result<Object> updateUser(@Validated @RequestBody User user){
         service.update(user);
         return Result.ok();
