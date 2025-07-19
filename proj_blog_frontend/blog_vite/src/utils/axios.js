@@ -1,6 +1,8 @@
 import axios from "axios";
+
 // 使用element-plus ElMessage做消息提醒
 import { ElMessage } from "element-plus";
+
 
 //1. 创建新的axios实例，
 const service = axios.create({
@@ -9,6 +11,8 @@ const service = axios.create({
     // 超时时间 单位是ms，这里设置了5s的超时时间
     timeout: 50000,
 });
+
+
 // 2.请求拦截器
 service.interceptors.request.use(
     (config) => {
@@ -33,6 +37,7 @@ service.interceptors.request.use(
     }
 );
 
+
 // 3.响应拦截器
 service.interceptors.response.use(
     (response) => {
@@ -52,5 +57,7 @@ service.interceptors.response.use(
         return Promise.resolve(error.response);
     }
 );
+
+
 //4.导出
 export default service;

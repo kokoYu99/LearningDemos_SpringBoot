@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koko.mapper.UserMapper">
+
+    <!--    int loginCheck(String username, String password);-->
+    <select id="loginCheck" resultType="_int">
+        SELECT COUNT(*) FROM user
+        WHERE username=#{username} AND password=#{password}
+    </select>
+
+    <!--    User queryDetails(Long id);-->
+    <select id="queryDetails" resultType="user">
+        SELECT * FROM user WHERE uid=#{uId}
+    </select>
+
+    <!--    int update(User user);-->
+    <update id="update">
+        UPDATE user
+        SET
+        phone=#{phone},
+        introduction=#{introduction},
+        update_time=#{updateTime}
+        WHERE uid=#{uId}
+    </update>
+
+</mapper>

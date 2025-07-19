@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koko.mapper.CategoryMapper">
+
+    <sql id="sel">
+        SELECT * FROM category
+    </sql>
+
+    <!--  List<Category> queryAll();  -->
+    <select id="queryAll" resultType="category">
+        <include refid="sel"/>
+    </select>
+
+    <!--    List<Category> queryByPage(Integer page, Integer pageSize, String keyword);-->
+    <select id="queryByPage" resultType="category">
+        <include refid="sel"/>
+        <where>
+            <if test="keyword!=null and keyword!=''">
+                cname LIKE concat('%', #{keyword}, '%')
+            </if>
+        </where>
+    </select>
+
+    <!--  Category queryDetails(Long id);  -->
+    <select id="queryDetails" resultType="category">
+        <include refid="sel"/>
+        WHERE cid=#{id}
+    </select>
+
+    <!--  int insert(Category category);  -->
+    <insert id="insert">
+        INSERT INTO category (cname, create_time, update_time) VALUES (#{cName}, #{createTime}, #{updateTime})
+    </insert>
+
+    <!--  int update(Category category);  -->
+    <update id="update">
+        UPDATE category SET cname=#{cName}, update_time=#{updateTime} WHERE cid=#{cId}
+    </update>
+
+    <!--  boolean isCNameExists(String cName); 校验类别是否已存在 -->
+    <select id="isCNameExists" resultType="_int">
+        SELECT COUNT(*) FROM category WHERE cname=#{cName}
+    </select>
+
+
+    <!--  int delete(Long id);
+        逻辑删除"
+       is_deleted = 1 删除 0 未删除 [+] 查询的时候，都需要添加is_deleted = 0
+    -->
+    <delete id="delete">
+        DELETE FROM category WHERE cid=#{id}
+    </delete>
+
+</mapper>
