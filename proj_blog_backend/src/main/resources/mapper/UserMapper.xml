@@ -6,8 +6,8 @@
 <mapper namespace="com.koko.mapper.UserMapper">
 
     <!--    int loginCheck(String username, String password);-->
-    <select id="loginCheck" resultType="_int">
-        SELECT COUNT(*) FROM user
+    <select id="loginCheck" resultType="user">
+        SELECT * FROM user
         WHERE username=#{username} AND password=#{password}
     </select>
 

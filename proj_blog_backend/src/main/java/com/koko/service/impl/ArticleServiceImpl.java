@@ -51,9 +51,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article queryDetails(Long id) {
         Article article = mapper.queryDetails(id);
+
+        //如果文章不存在，抛异常
         if (article == null) {
             throw new ResourceNotFoundException("文章不存在");
         }
+
+        //如果文章存在，将密码置空，并返回
+        article.getUser().setPassword(null);
 
         return article;
     }

@@ -2,8 +2,11 @@ package com.koko.service;
 
 import com.koko.pojo.User;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public interface UserService {
-    void loginCheck(User user);
+    HashMap<String, Long> loginCheck(User user);
 
     User queryDetails(Long id);
 

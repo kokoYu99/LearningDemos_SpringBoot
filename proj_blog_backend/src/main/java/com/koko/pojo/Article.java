@@ -38,4 +38,7 @@ public class Article {
     @Schema(description = "修改时间")
     private Date updateTime;
 
+    @Schema(description = "发布文章的用户")
+    private User user;
+
 }

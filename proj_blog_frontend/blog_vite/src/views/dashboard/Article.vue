@@ -1,31 +1,65 @@
+<script setup>
+/* 1. 导入依赖和自己定义的api方法 */
+import { ref, onMounted } from "vue";
+import { ElMessage, ElMessageBox } from "element-plus";
+import RichTextEditor from "../../components/RichTextEditor.vue";
+import {
+    articleList,
+    articleDetails,
+    articleInsert,
+    articleUpdate,
+    articleDelete,
+} from '../../api/article';
+import {
+    categoryAll
+} from '../../api/category.js';
+import cookie from 'js-cookie';
+
+
+/* 2. 定义全局常量 */
+//类别集合的响应式数据
+const categoryList = ref([]);
+
+//文章列表的响应式数据
+let artiList = ref([]);
+
+// 控制对话是否展示的变量
+const dialogVisible = ref(false);
+const dialogShowVisible = ref(false);
+const defaultForm = {
+    id: "",
+    cid: "",
+    title: "",
+    content: "",
+};
+const article = ref(defaultForm); // 使用ref包裹该对象，使用reactive不方便进行重置
+
+/* 3. 定义周期函数 */
+
+
+/* 4. 定义事件函数 */
+
+
+</script>
+
+
 <template>
     <div class="search-div">
         <!-- 添加按钮 -->
         <div class="tools-div">
-            <el-button type="success" size="small" @click="addShow"
-                >添 加</el-button
-            >
+            <el-button type="success" size="small" @click="addShow">添 加</el-button>
         </div>
 
         <!--- 角色表格数据 -->
-        <el-table :data="list" style="width: 100%">
+        <el-table :data="artiList" style="width: 100%">
             <el-table-column prop="id" label="文章ID" width="180" />
             <el-table-column prop="title" label="文章标题" width="180" />
             <el-table-column prop="createTime" label="发布时间" />
-            <el-table-column
-                label="操作"
-                align="center"
-                width="280"
-                #default="scope"
-            >
+            <el-table-column label="操作" alignment="center" width="280" #default="scope">
                 <el-button type="primary" size="small" @click="show(scope.row)">
                     查看
                 </el-button>
-                <el-button
-                    type="danger"
-                    size="small"
-                    @click="deleteById(scope.row)"
-                >
+                <el-button type="danger" size="small" @click="deleteById(scope.row)">
                     删除
                 </el-button>
             </el-table-column>
@@ -38,26 +72,13 @@
                 </el-form-item>
 
                 <el-form-item label="所属分类">
-                    <el-select
-                        class="m-2"
-                        v-model="article.cid"
-                        placeholder="选择分类"
-                        size="small"
-                        style="width: 100%"
-                    >
-                        <el-option
-                            v-for="item in categoryList"
-                            :key="item.id"
-                            :label="item.cname"
-                            :value="item.cid"
-                        />
+                    <el-select class="m-2" v-model="article.cid" placeholder="选择分类" size="small" style="width: 100%">
+                        <el-option v-for="item in categoryList" :key="item.id" :label="item.cname" :value="item.cid" />
                     </el-select>
                 </el-form-item>
 
                 <el-form-item label="文章内容">
-                    <rich-text-editor
-                        v-model="article.content"
-                    ></rich-text-editor>
+                    <rich-text-editor v-model="article.content"></rich-text-editor>
                 </el-form-item>
 
                 <el-form-item>
@@ -74,26 +95,6 @@
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-import { ElMessage, ElMessageBox } from "element-plus";
-import RichTextEditor from "../../components/RichTextEditor.vue";
-
-const categoryList = ref([]);
-// 定义表格数据模型
-let list = ref([]);
-
-// 控制对话是否展示的变量
-const dialogVisible = ref(false);
-const dialogShowVisible = ref(false);
-const defaultForm = {
-    id: "",
-    cid: "",
-    title: "",
-    content: "",
-};
-const article = ref(defaultForm); // 使用ref包裹该对象，使用reactive不方便进行重置
-</script>
 
 <style scoped>
 .search-div {

@@ -47,11 +47,10 @@ const articleList = (cid) => {
         method: "get",
         url: "/article/list",
         params: {
-            cid: cid, 
+            cId: cid,
         },
     });
 };
-
 
 /* ### 1.1.2 文章详情查询
 功能：
@@ -79,7 +78,6 @@ const articleDetails = (id) => {
     });
 };
 
-
 /* ### 1.1.3 文章新增
 功能：
 1. 后台管理页面：文章的新增
@@ -105,7 +103,6 @@ const articleInsert = (article) => {
         data: article,
     });
 };
-
 
 /* ### 1.1.4 文章修改
 功能：
@@ -134,7 +131,6 @@ const articleUpdate = (article) => {
         data: article,
     });
 };
-
 
 /* ### 1.1.5 文章删除
 功能：

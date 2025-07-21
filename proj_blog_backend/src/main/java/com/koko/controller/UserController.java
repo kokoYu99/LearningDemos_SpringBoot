@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
+
+@CrossOrigin
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -15,8 +19,8 @@ public class UserController {
 
     @PostMapping("/login")
     public Result<Object> loginCheck(@RequestBody User user) {
-        service.loginCheck(user);
-        return Result.ok();
+        HashMap<String, Long> data = service.loginCheck(user);
+        return Result.ok(data);
     }
 
     @GetMapping("{id}")

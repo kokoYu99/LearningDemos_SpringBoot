@@ -1,3 +1,54 @@
+<script setup>
+/* 1. 导入依赖 */
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import cookie from "js-cookie";
+
+/* 2. 定义全局常量对象 */
+//router对象，用于跳转页面
+const router = useRouter();
+
+//左侧的菜单数组
+const menus = ref([
+    { name: "文章管理", href: "/dashboard/article" },
+    { name: "分类管理", href: "/dashboard/category" },
+    { name: "用户中心", href: "/dashboard/user" },
+    { name: "退出", href: "logout" },
+]);
+
+//左上角的用户名，页面挂载后立即加载
+const name = ref(null);
+
+/* 3. 定义周期函数 */
+//挂载后立即获取用户名
+onMounted(() => {
+    getName();
+});
+
+/* 4. 定义方法，自定义逻辑 */
+const getName = () => {
+    //从存储的cookie中取出username
+    name.value = cookie.get("username");
+
+    //如果name为null，跳转到登录页
+    //逻辑：name==null -> null==false -> !false取反为true
+    if (!name.value) {
+        router.push("/login")
+    }
+};
+
+const toPage = (menu) => {
+    if (menu.href == "logout") {
+        //点击退出，跳转回登录页
+        router.push("/login");
+    } else {
+        let paths = menu.href;
+        router.push(paths);
+    }
+};
+</script>
+
+
 <template>
     <div class="main-panel">
         <div class="menus">
@@ -6,58 +57,18 @@
                 {{ name }}
             </el-button>
 
-            <div v-for="(menu, index) in menus" @click="toPage(menu)">
+            <div v-for="(menu, index) in menus" :key="index" @click="toPage(menu)">
                 {{ menu.name }}
             </div>
-        </div>
 
-        <div style="padding: 20px; width: 80%">
+        </div>
+        <div style="padding:20px;width:80%">
             <router-view></router-view>
         </div>
-
-        <div class="title">后台管理系统</div>
     </div>
+    <div class="title">后台管理系统</div>
 </template>
 
-<script setup>
-import { ref, reactive, inject, onMounted, computed } from "vue";
-import { useRouter, useRoute } from "vue-router";
-import cookie from "js-cookie";
-
-const router = useRouter();
-const route = useRoute();
-
-// 分类列表
-const props = [
-    { name: "文章管理", href: "/dashboard/article" },
-    { name: "分类管理", href: "/dashboard/category" },
-    { name: "用户中心", href: "/dashboard/user" },
-    { name: "退出", href: "logout" },
-];
-const menus = ref(props);
-
-const name = ref(null);
-
-onMounted(() => {
-    getName();
-});
-
-const getName = () => {
-    name.value = cookie.get("name");
-    // if(!name.value) {
-    //     router.push("/login")
-    // }
-};
-
-const toPage = (menu) => {
-    if (menu.href == "logout") {
-        router.push("/login");
-    } else {
-        let paths = menu.href;
-        router.push(paths);
-    }
-};
-</script>
 
 <style lang="scss" scoped>
 .main-panel {

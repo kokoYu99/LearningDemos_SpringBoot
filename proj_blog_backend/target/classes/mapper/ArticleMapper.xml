@@ -23,10 +23,18 @@
         </where>
     </select>
 
+    <resultMap id="detailMap" type="article">
+        <id column="id" property="id"/>
+        <association property="user" javaType="user">
+            <id column="uid" property="uId"/>
+        </association>
+    </resultMap>
     <!--    Article queryDetails(Integer id);-->
-    <select id="queryDetails" resultType="article">
-        <include refid="select"/>
-        WHERE id=#{id}
+    <select id="queryDetails" resultMap="detailMap">
+        SELECT * FROM article a
+        LEFT JOIN user u
+        ON a.uid=u.uid
+        WHERE a.id=#{id}
     </select>
 
     <!--    int insert(Article article);-->

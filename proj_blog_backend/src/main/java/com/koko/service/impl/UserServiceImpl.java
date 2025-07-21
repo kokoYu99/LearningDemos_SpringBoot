@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,11 +18,18 @@ public class UserServiceImpl implements UserService {
 
     /* 登录检查用户名和密码 */
     @Override
-    public void loginCheck(User user) {
-        int rows = mapper.loginCheck(user.getUsername(), user.getPassword());
-        if (rows == 0) {
+    public HashMap<String, Long> loginCheck(User user) {
+        User userChecked = mapper.loginCheck(user.getUsername(), user.getPassword());
+
+        //校验不通过
+        if (userChecked == null) {
             throw new BusinessException(400, "用户名或密码错误");
         }
+
+        //校验通过，返回uid (主键回显)
+        HashMap<String, Long> data = new HashMap<>();
+        data.put("uid", userChecked.getUId());
+        return data;
     }
 
     /* 查询用户详情 */

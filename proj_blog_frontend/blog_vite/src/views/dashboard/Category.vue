@@ -1,3 +1,42 @@
+
+<script setup>
+import { ref, onMounted } from "vue";
+import { ElMessage, ElMessageBox } from "element-plus";
+import {
+    categoryAll,
+    categoryPage,
+    categoryDetails,
+    categoryInsert,
+    categoryUpdate,
+    categoryDelete,
+} from '../../api/category.js';
+
+// 分页条总记录数
+let total = ref(0);
+
+//分页数据
+const pageParamsForm = {
+    page: 1, // 页码
+    limit: 2, // 每页记录数
+};
+const pageParams = ref(pageParamsForm); // 将pageParamsForm包装成支持响应式的对象
+
+// 定义表格数据模型
+let list = ref([]);
+
+// 搜索表单数据
+const queryDto = ref({ cname: "" });
+
+// 控制对话是否展示的变量
+const dialogVisible = ref(false);
+const defaultForm = {
+    cid: "",
+    cname: "",
+};
+const category = ref(defaultForm); // 使用ref包裹该对象，使用reactive不方便进行重置
+</script>
+
+
 <template>
     <div class="search-div">
         <!-- 搜索表单 -->
@@ -31,7 +70,7 @@
             <el-table-column prop="createTime" label="创建时间" />
             <el-table-column
                 label="操作"
-                align="center"
+                alignment="center"
                 width="280"
                 #default="scope"
             >
@@ -76,34 +115,6 @@
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-import { ElMessage, ElMessageBox } from "element-plus";
-
-// 分页条总记录数
-let total = ref(0);
-
-//分页数据
-const pageParamsForm = {
-    page: 1, // 页码
-    limit: 2, // 每页记录数
-};
-const pageParams = ref(pageParamsForm); // 将pageParamsForm包装成支持响应式的对象
-
-// 定义表格数据模型
-let list = ref([]);
-
-// 搜索表单数据
-const queryDto = ref({ cname: "" });
-
-// 控制对话是否展示的变量
-const dialogVisible = ref(false);
-const defaultForm = {
-    cid: "",
-    cname: "",
-};
-const category = ref(defaultForm); // 使用ref包裹该对象，使用reactive不方便进行重置
-</script>
 
 <style scoped>
 .search-div {
