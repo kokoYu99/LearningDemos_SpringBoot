@@ -1,4 +1,13 @@
 <script setup>
+/* 
+    1. 导入依赖
+    2. 定义页面展示的数据，包括响应式数据
+        响应式数据：修改数据后，页面展示的数据随之更新
+        Vue3的数据默认不具备响应性，必须主动设置
+    3. 定义Vue的周期函数，加载初始化数据
+    4. 定义事件函数，自定义逻辑
+*/
+
 /* 1. 导入依赖 */
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
