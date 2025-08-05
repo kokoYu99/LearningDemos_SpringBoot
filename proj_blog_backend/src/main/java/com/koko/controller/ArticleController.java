@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
-//描述Controller类
-@Tag(name="ArticleController", description = "文章接口api")
+@Tag(name="ArticleController", description = "文章接口api")//描述Controller类
 @RestController
 @RequestMapping("article")
 public class ArticleController {
