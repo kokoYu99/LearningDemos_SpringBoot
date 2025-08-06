@@ -13,7 +13,7 @@ import java.util.Set;
 /*
  * TODO：
  *  Jedis使用步骤
- * 1. 创建jedis连接对象，构造器：new Jedis(String host, int port)
+ * 1. 创建jedis连接对象，构造器 Jedis(String host, int port)
  * 2. 使用连接对象
  * 3. 关闭资源
  * */
