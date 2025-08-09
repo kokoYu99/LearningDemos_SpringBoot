@@ -1,0 +1,38 @@
+spring:
+  data:
+    redis:
+      # 主机号
+      host: 192.168.6.100
+      # 端口号
+      port: 6379
+      # 配置客户端类型。默认是lettuce
+      client-type: lettuce
+      # 设置lettuce的底层参数
+      lettuce:
+        pool:
+          # 1. 启用Lettuce连接池
+          enabled: true
+          # 2. 连接池中允许的最大活动连接数
+          max-active: 8
+          # 3. 连接池中允许的最大空闲连接数
+          max-idle: 5
+          # 4. 获取连接时的最大等待时间(ms)
+          max-wait: 100
+      #配置哨兵
+      sentinel:
+        #主服务器名称
+        master: mymaster
+        #哨兵地址
+        nodes: 192.168.6.100:26379
+
+
+
+#客户端类型切换为jedis
+#spring:
+#  data:
+#    redis:
+#      client-type: jedis
+#      jedis:
+#        pool:
+#          enabled: true
+#          max-active: 8

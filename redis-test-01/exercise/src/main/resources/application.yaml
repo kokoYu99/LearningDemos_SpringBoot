@@ -1,0 +1,22 @@
+spring:
+  data:
+    redis:
+      host: 192.168.6.100
+      port: 6379
+      client-type: lettuce
+      # 设置lettuce的底层参数
+      lettuce:
+        pool:
+          # 1. 启用Lettuce连接池
+          enabled: true
+          # 2. 连接池中允许的最大活动连接数
+          max-active: 8
+          # 3. 连接池中允许的最大空闲连接数
+          max-idle: 5
+          # 4. 获取连接时的最大等待时间(ms)
+          max-wait: 100
+
+      # 集群配置
+#      cluster:
+#        nodes: 192.168.6.100:6379, 192.168.6.100:6380, 192.168.6.100:6381, 192.168.6.100:6382, 192.168.6.100:6383, 192.168.6.100:6384
+#        max-redirects: 5
