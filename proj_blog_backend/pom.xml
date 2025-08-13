@@ -68,6 +68,56 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- 测试docker打包构建 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.2</version>
+
+                <!--将插件绑定在某个phase执行-->
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <!--将插件绑定在package这个phase(阶段)上。也就是说，用户只需执行mvn package，就会自动执行mvn docker:build-->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+                <configuration>
+
+                    <!--指定生成的镜像名-->
+                    <imageName>${project.artifactId}</imageName>
+
+                    <!--指定标签,也就是版本号,可以自定义-->
+                    <imageTags>
+                        <imageTag>v2.0</imageTag>
+                    </imageTags>
+
+                    <!--指定远程 docker api地址 也就是服务器ip+docker的端口号-->
+                    <dockerHost>http://192.168.6.100:2375</dockerHost>
+
+                    <!-- 指定 dockerfile 路径-->
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
+
+                    <!-- 是否跳过docker构建 -->
+                    <!--  <skipdockerBuild>false</skipdockerBuild>-->
+
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
+
 
     <groupId>com.koko</groupId>
     <artifactId>proj_blog_backend</artifactId>
